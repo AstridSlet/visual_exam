@@ -6,7 +6,8 @@ This repository includes four projects including three class assignments develop
 
 | Folder | Description|
 |--------|:-----------|
-```project_folder``` | project folder holding main scripts. 
+```project_folder``` | project folder.
+```/src``` | folder holding main scripts.
 ```/data```| data folder holding sample datasets used for the project.
 ```/utils```| folder holding utility functions used in main scripts.
 ```/output``` | output folder holding an example output, produced when running the script with default settings.
