@@ -91,7 +91,7 @@ def main():
     
     
     # define path to input images
-    images_path = os.path.join(args["inpath"])
+    images_path = os.path.join("..", args["inpath"])
 
     # define target image path
     target_path = os.path.join("data", args["target_image"])
@@ -107,7 +107,7 @@ def main():
     df = df.sort_values(by = "distance")
     
     # define output filepath
-    outpath = os.path.join("output", args["outpath"])
+    outpath = os.path.join("..","output", args["outpath"])
     
     # save df 
     df.to_csv(outpath, index=False)

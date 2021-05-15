@@ -7,6 +7,14 @@ Requirements
 * Save your script as cnn-artists.py
 * You should save visualizations showing loss/accuracy of the model during training; you should also a save the output from the classification report.
 
+## Methods
+The first step in this process was to make the data into a format that could be fed into the CNN model. All of the images are of different shapes and sizes, and the script therefore first resizes the images to have them be a uniform (smaller) shape (32 x 32 pixels as default). 
+
+Additionally, it was necessary to make the the images into an array to be able to use them in the model and to extract 'labels' from filenames for use in the classification report. 
+
+The model architecture of the convolutional network can be seen in the output folder (output/model_architecture.png). The network has a single convolutional layer (which has a set of learnable filters/kernels) and a relu activation layer, a flattening layer. Additionally, it has a fully connected layer and softmax layer for the final classification, as the model is used for multiclass classification. The model optimizes using categorical crossentropy, which should be used when there are two or more label classes (source).
+
+
 ## Usage
 
 For this assignment the following command line script was created:
@@ -41,3 +49,13 @@ $ python cnn-artists.py
 
 When running the script a classification report will be printet to the command line with F1-scores for each of the ten output classes (Hassam, Gaugin, VanGogh, Monet, Passaro, Renoir, Degas, Cezanne, Matisse and Sargent) and saved as a csv in the output folder. Additionally the script will produce an image of the model architecture and the training history, which is also saved in the output folder. 
 
+## Discussion of results
+Sklearn’s function classification_report() returns the macro average F1 score for each class (averaging the unweighted mean per label). The F1-score can be interpreted as an average of precision and recall. 
+* Recall expresses the proportion of positive samples (true positives) that are correctly classified as positive out of all the positive samples there are in total (true positives + false negatives), e.g. out of all the paintings by Monet there are, how many of these are classified as Monet? 
+* Precision expresses the number of samples that were classified as positive that are indeed positive, e.g. out of the group of images that are predicted to be by Monet (true positives + false positives), how many paintings are indeed by Monet (true positives).
+
+When looking at the F1-scores for the different classes it seems that the model performs somewhat dissimilar when predicting the different classes with F1-scores down to 0.28 (Monet) and 0.29 (Hassam) and up to 0.44 (Degas). Possibly, there are some more distinct patterns in the Degas’ paintings, making it easier for the model to correctly these paintings. 
+
+For the worst classes (Monet and Hassam) the errors that the model make are slightly different. For the Monet-output class that model has higher precision than recall, and for the Hassam-output group recall is higher than precision. This means that the model is more likely to predict images as Hassam (higher recall) but is less precise in its predictions as compared to when the model has to predict the Monet output-class.    
+
+When looking at the training history (output/training_history.png) you can see that the validation loss becomes higher than the training loss already after 4 epochs suggesting that the model overfits the training data rather quickly, while it still fails to reach high F1-scores for the output classes.  

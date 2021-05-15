@@ -101,7 +101,7 @@ def main():
 
     
     # save classification report    
-    df.to_csv(os.path.join("..", "out", args["outfile"]), index= True)
+    df.to_csv(os.path.join("..","output", args["outfile"]), index= True)
 
     
 # define behaviour from command line 

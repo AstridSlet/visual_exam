@@ -124,7 +124,7 @@ def main():
                                                     output_dict=True)).transpose().round(decimals=2)
 
     # save classification report    
-    df.to_csv(os.path.join("..", "out", args["outfile"]), index = True)
+    df.to_csv(os.path.join("..", "output", args["outfile"]), index = True)
 
     
 # define behaviour from command line 

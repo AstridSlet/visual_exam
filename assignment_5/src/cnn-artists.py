@@ -24,6 +24,8 @@ import os, sys
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+sys.path.append(os.path.join(".."))
+
 
 # sklearn tools
 from sklearn.metrics import classification_report
@@ -50,12 +52,12 @@ from pathlib import Path
 import cv2
 
 # utility functions 
-from viz_utils import load_data
-from viz_utils import one_hot
-from viz_utils import train_network
-from viz_utils import model_structure_viz
-from viz_utils import plot_train_hist
-from viz_utils import evaluate_model
+from utils.viz_utils import load_data
+from utils.viz_utils import one_hot
+from utils.viz_utils import train_network
+from utils.viz_utils import model_structure_viz
+from utils.viz_utils import plot_train_hist
+from utils.viz_utils import evaluate_model
 
 
 # define main function
@@ -109,8 +111,8 @@ def main():
     
     
     # define input paths to train and validation data 
-    path1 = os.path.join("data", args["infile1"])
-    path2 = os.path.join("data", args["infile2"])
+    path1 = os.path.join("..", "data", args["infile1"])
+    path2 = os.path.join("..", "data", args["infile2"])
 
     print("\n[INFO] Fetching data...") 
     # load train and validation set

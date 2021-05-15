@@ -116,7 +116,7 @@ def model_structure_viz(model):
     """
     Save visualization of model architecture.
     """
-    impath = os.path.join("output","model_architecture.png")
+    impath = os.path.join("..","output","model_architecture.png")
     tensorflow.keras.utils.plot_model(model, to_file = impath, show_shapes = True)
     
 
@@ -135,7 +135,7 @@ def plot_train_hist(model, epochs):
     plt.ylabel("Loss/Accuracy")
     plt.tight_layout()
     plt.legend()
-    plt.savefig(os.path.join("output", "training_history.png"))
+    plt.savefig(os.path.join("..","output", "training_history.png"))
 
 
 
@@ -154,7 +154,7 @@ def evaluate_model(model, testX, testY, batch_size, class_names):
     df = pd.DataFrame( classification_report(testY.argmax(axis = 1),predictions.argmax(axis = 1),target_names = class_names,output_dict = True)).transpose().round(decimals=2)
         
     # save classification report    
-    df.to_csv(os.path.join("output", "classification_report.csv"), index = True)
+    df.to_csv(os.path.join("..","output", "classification_report.csv"), index = True)
     
     return clf_report
 
