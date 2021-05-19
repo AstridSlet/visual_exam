@@ -42,7 +42,7 @@ This will unpack the training and validation images in the data folder. If you h
 
 ```
 $ cd visual_exam
-$ source lang_venv/bin/activate
+$ source visual_venv/bin/activate
 $ cd assignment_5
 $ python cnn-artists.py
 ```
@@ -51,6 +51,7 @@ When running the script a classification report will be printet to the command l
 
 ## Discussion of results
 Sklearn’s function classification_report() returns the macro average F1 score for each class (averaging the unweighted mean per label). The F1-score can be interpreted as an average of precision and recall. 
+
 * Recall expresses the proportion of positive samples (true positives) that are correctly classified as positive out of all the positive samples there are in total (true positives + false negatives), e.g. out of all the paintings by Monet there are, how many of these are classified as Monet? 
 * Precision expresses the number of samples that were classified as positive that are indeed positive, e.g. out of the group of images that are predicted to be by Monet (true positives + false positives), how many paintings are indeed by Monet (true positives).
 

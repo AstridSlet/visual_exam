@@ -24,7 +24,7 @@ $ bash ./create_venv.sh
 $ source visual_venv/bin/activate
 ```
 
-If you run into issues with libraries/dependencies when running any of the scripts, the necessary packages can be installed these manually using the following command line code:
+If you run into issues with libraries/dependencies when running any of the scripts, the necessary packages can be installed manually using the following command line code:
 
 ```
 $ cd visual_exam

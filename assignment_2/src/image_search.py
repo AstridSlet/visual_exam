@@ -94,7 +94,7 @@ def main():
     images_path = os.path.join("..", args["inpath"])
 
     # define target image path
-    target_path = os.path.join("data", args["target_image"])
+    target_path = os.path.join("..", "data", args["target_image"])
     print(f"The target image path is {target_path}")
     # get filenames and chi^2 values for all images
     filename_list, chi_list = calc_chi_values(images_path, target_path)

@@ -15,11 +15,12 @@ Choose one image in your data that you want to be the 'target image'. Write a Py
 
 
 ## Methods
-This assignment relates to how RGB images can be compared based on their color histogram of this distribution of red, green and blue in the pictures. For this task a color histogram is computed for a target image (default = “image_0002.jpg”) and for the remaining images of the data set using the cv2.calcHist(). The histograms are then compared with the histogram of the target image in turn using the cv2.compareHist() with the chi-square distance method. 
+This assignment relates to how RGB images can be compared based on the distribution of red, green and blue color in the pictures. For this task a color histogram (depicting the distribution of red, green and blue) is computed for a target image (default = “image_0002.jpg”) and for the remaining images of the data set using the openCV funcition cv2.calcHist(). The color histograms are then compared with the target histogram in turn using the cv2.compareHist() function which computes the chi-square distance between the histograms.  
 
 
 ## Usage
 For this assignment the following command line script was created:
+
 * image_search.py
     * arguments:
         *  "--inpath", required = False, type = str, help = "Path to input images", default = "data"
@@ -38,8 +39,8 @@ If you have successfully cloned this repository, unzipped/downloaded the data an
 
 ```
 $ cd visual_exam
-$ source lang_venv/bin/activate
-$ cd assignment_2
+$ source visual_venv/bin/activate
+$ cd assignment_2/src
 $ python image_search.py
 ```
 When the script is run all chi values are saved along with the corresponding file name in a csv file. The file name of the image with the lowest chi-square distance is printed to the terminal along with the chi-square value between that image and the target image.
@@ -47,5 +48,7 @@ When the script is run all chi values are saved along with the corresponding fil
 
 
 ## Discussion of results
-Though this method for image comparison is relatively simple it helps to illuminate how a computer interprets RGB images. By splitting the images up in three different color channels and comparing the distribution of pixel values of the three colors the computer is able to compare images. This assignment thus serves as an insight into how comparison of pixel intensities works. While simply looking at color is, of course, a simplistic approach to image comparison, this assessment of pixel intensities is also the foundation of the application of kernel functions. When a kernel function designed to detect edges in an image is applied, this kernel function will summaries the distribution of pixel intensity values in an image. This can enable a model to detect if the values are marking an edge in the image, and from the combined information of many kernel functions of various types the algorithm can learn to detect objects. Thus, this script servs as an illustration of how images are interpreted by computers at the simplest level. 
+Though this method for image comparison is relatively simple it helps to illuminate how a computer interprets RGB images. By splitting the images up in three different color channels and comparing the distribution of pixel values of the three colors the computer is able to make a judgment on how similar two images are. 
+
+While simply looking at color, naturally, is a simplistic approach to image comparison, this assessment of pixel intensities is also the foundation of the application of kernel functions. When a kernel function designed to detect edges in an image is applied, this kernel function will summaries the distribution of pixel intensity values in an image. This can enable a model to detect if the values are marking an edge in the image, and from the combined information of many kernel functions of various types of the algorithm can learn to detect objects – and from these higher-level representations also make comparisons of images. Despite providing an easy method for image comparison, one can argue that this assignment serves as an insight into how these higher-level image comparisons works. 
 

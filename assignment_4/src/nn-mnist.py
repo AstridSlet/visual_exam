@@ -17,7 +17,7 @@ Example:
 # import dependencies 
 import sys,os
 import numpy as np
-sys.path.append(os.path.join("..", "..", ".."))
+sys.path.append(os.path.join(".."))
 import argparse
 import pandas as pd
 

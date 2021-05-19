@@ -36,7 +36,7 @@ If you have successfully cloned this repository and created the virtual environm
 
 ```
 $ cd visual_exam
-$ source lang_venv/bin/activate
+$ source visual_venv/bin/activate
 $ cd assignment_4
 $ python lr-mnist.py
 $ python nn-mnist.py
@@ -48,5 +48,5 @@ All arguments described above are not required. If nothing else is specified, th
 
 ## Discussion of results
 When using Sklearn’s function classification_report() it returns the macro average F1 score for each class (averaging the unweighted mean per label) (Pedregosa et al., 2011). When viewing the output of the simple logistic regression, the network actually reaches very high F1-scores for all ten output classes with F1-values between 0.88 (for the digits 8 and 9) and up to 0.97 (for the digit 0) and a macro average of 0.92. The slightly lower F1-scores for the digits 8 and 9 could be due to these digits having some similarity in how they are shaped making it harder for the model to distinguish and correctly classify them. 
-When training the neural network, the accuracies even reach 1 for some classes, which is almost unrealistically high. When viewing the training loss printed to command line reveals that the training loss is reduced to almost 0 meaning that this model might perform worse when tested on out-of-sample images. 
 
+When training the neural network, the accuracies even reach 1 for some classes, which is almost unrealistically high. When viewing the training loss printed to command line reveals that the training loss is reduced to almost 0 meaning that this model might perform worse when tested on out-of-sample images due to overfitting on the training data. 

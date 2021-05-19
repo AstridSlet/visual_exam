@@ -40,7 +40,7 @@ If you have successfully cloned this repository, downloaded the data in the data
 
 ```
 $ cd visual_exam
-$ source lang_venv/bin/activate
+$ source visual_venv/bin/activate
 $ cd final_project/src
 $ python fake-faces.py
 ```
