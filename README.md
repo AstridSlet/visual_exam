@@ -43,7 +43,7 @@ $ rm -rf visual_venv
 If you experience any issues with downloading the packages and installing dependencies feel free to contact me by e-mail: astrid.rybner@hotmail.com
 
 
-## Aknowledgements
+## Acknowledgements
 Credits to [Ross](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html) for repo structure inspiration and the utility functions developed in class used in original/adapted versions for these projects.  
 
 
