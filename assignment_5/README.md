@@ -60,3 +60,10 @@ When looking at the F1-scores for the different classes it seems that the model 
 For the worst classes (Monet and Hassam) the errors that the model make are slightly different. For the Monet-output class that model has higher precision than recall, and for the Hassam-output group recall is higher than precision. This means that the model is more likely to predict images as Hassam (higher recall) but is less precise in its predictions as compared to when the model has to predict the Monet output-class.    
 
 When looking at the training history (output/training_history.png) you can see that the validation loss becomes higher than the training loss already after 4 epochs suggesting that the model overfits the training data rather quickly, while it still fails to reach high F1-scores for the output classes.  
+
+
+### References: 
+Chollet, F. (2015). others.(2015). Keras. Retrieved from https://github.com/fchollet/keras
+
+Ma, Y., & He, H. (2013). Imbalanced learning: Foundations, algorithms, and applications. IEEE Press. https://doi.org/10.1002/9781118646106
+
