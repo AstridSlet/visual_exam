@@ -3,13 +3,13 @@
 ## Project description 
 For this project I chose to work on creating a script that could distinguish fake faces from real faces, inspired by an interests in the phenomenon of deepfakes and how to detect them. For computational reasons I have chosen to use a smaller data set from Kaggle, which includes 2041 images in total (960 fake, 1081 real). The fake faces have been made by adding subparts from different faces (eyes, nose, mouth, or whole face) using photoshop. When running the script, the sample plots below are produced to illustrate how the two classes (Fake and Real), differ:
 
-<p align="center"> <img src="output/example_images_Real.png" alt="Logo" width="400" height="400"></a>   <a <img src="output/example_images_Fake.png" alt="Logo" width="400" height="400"> <p>
+<p align="center"> <img src="output/example_images_Real.png" alt="Logo" width="400" height="400"></a>   <a align="center"> <img src="output/example_images_Fake.png" alt="Logo" width="400" height="400"> <p>
 
 
 ## Methods
 Though the images in the chosen data set are relatively centered on the faces, I chose to use the Multi-Task Cascaded Convolutional Neural Network (MTCNN) which is a state-of-the-art deep learning model for face detection (Zhang et al., 2019). The algorithm generates a bounding box (defined with coordinates) when it detects a face. These coordinates can then be used to create an image array with just the contents of the bounding box by indexing the original image array. In other words, you can use this algorithm to ‘zoom’ in on just the face. 
 
-<p align="center"> <img src="readme_images/example_face.jpg" alt="Logo" width="400" height="400"></a>   <a p <img src="readme_images/example_detected_face_MTCNN.jpg" alt="Logo" width="200" height="200"> <p>
+<p align="center"> <img src="readme_images/example_face.jpg" alt="Logo" width="400" height="400"></a>   <a p align="center"> <img src="readme_images/example_detected_face_MTCNN.jpg" alt="Logo" width="200" height="200"> <p>
 
 In this way, when you train a classifier to distinguish between subclasses in your data, you are preventing the model from learning from background features of the image. A possible extension of this project would be to use a data set which included full-figure images of people instead of the sample data set provided here, which is made possible by including this step with the MTCNN model.   
 
