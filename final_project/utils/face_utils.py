@@ -59,7 +59,7 @@ def get_label(folder):
 
 def retrieve_face(result_list, pixels, required_size):
     """
-    1. Retrieve face using the face coordinates detected with MTCNN
+    1. Retrieve face, using the face coordinates detected with MTCNN to index the original image
     2. Resize face array to required input size of the Facenet model
     """
     # else extract the bounding box of the face
