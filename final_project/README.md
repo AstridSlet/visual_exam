@@ -3,25 +3,13 @@
 ## Project description 
 For this project I chose to work on creating a script that could distinguish fake faces from real faces, inspired by an interests in the phenomenon of deepfakes and how to detect them. For computational reasons I have chosen to use a smaller data set from Kaggle, which includes 2041 images in total (960 fake, 1081 real). The fake faces have been made by adding subparts from different faces (eyes, nose, mouth, or whole face) using photoshop. When running the script, the sample plots below are produced to illustrate how the two classes (Fake and Real), differ:
 
-<p align="left">
-    <img src="output/example_images_Real.png" alt="Logo" width="400" height="400">
-  <p>
-
-<p align="right">
-    <img src="output/example_images_Fake.png" alt="Logo" width="400" height="400">
-  <p>
+<p align="center"> <img src="output/example_images_Real.png" alt="Logo" width="400" height="400"></a>   <a <img src="output/example_images_Fake.png" alt="Logo" width="400" height="400"> <p>
 
 
 ## Methods
 Though the images in the chosen data set are relatively centered on the faces, I chose to use the Multi-Task Cascaded Convolutional Neural Network (MTCNN) which is a state-of-the-art deep learning model for face detection (Zhang et al., 2019). The algorithm generates a bounding box (defined with coordinates) when it detects a face. These coordinates can then be used to create an image array with just the contents of the bounding box by indexing the original image array. In other words, you can use this algorithm to ‘zoom’ in on just the face. 
 
-<p align="left">
-    <img src="readme_images/example_face.jpg" alt="Logo" width="400" height="400">
-  <p>
-
-<p align="right">
-    <img src="readme_images/example_detected_face_MTCNN.jpg" alt="Logo" width="200" height="200">
-  <p>
+<p align="center"> <img src="readme_images/example_face.jpg" alt="Logo" width="400" height="400"></a>   <a p <img src="readme_images/example_detected_face_MTCNN.jpg" alt="Logo" width="200" height="200"> <p>
 
 In this way, when you train a classifier to distinguish between subclasses in your data, you are preventing the model from learning from background features of the image. A possible extension of this project would be to use a data set which included full-figure images of people instead of the sample data set provided here, which is made possible by including this step with the MTCNN model.   
 
@@ -74,3 +62,13 @@ Overall, the results of this model are however not very impressive with a macro 
 But in this particular classification problem it is naturally no the same person that is always the ‘fake’ person. Instead, if the algorithm was indeed looking at distances between eyes, it would have to come up with a vector representation of ‘unreal/fake’ distances between eyes vs. ‘normal/real’ distances between eyes. It is easy to imagine that a model would need more than 2000 images to do detect generalizable patterns of ‘abnormal/fake’ face structures. It would therefore be interesting to try out the face detection pipeline presented in this project on a substantially larger image corpus. 
 
 
+#### References:
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M.,
+Prettenhofer, P., Weiss, R., & Dubourg, V. (2011). Scikit-learn: Machine learning in
+Python. the Journal of machine Learning research, 12, 2825–2830.
+
+Schroff, F., Kalenichenko, D., & Philbin, J. (2015). FaceNet: A unified embedding for face recognition and clustering. 2015 IEEE Conference on Computer Vision and Pattern
+Recognition (CVPR), 815–823. https://doi.org/10.1109/CVPR.2015.7298682
+
+Zhang, L., Chen, X., Vakil, A., Byott, A., & Ghomi, R. H. (2019). DigiVoice: Voice Biomarker
+Featurization and Analysis Pipeline. ArXiv:1906.07222 [Cs, Eess]. http://arxiv.org/abs/1906.07222
