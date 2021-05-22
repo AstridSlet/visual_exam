@@ -20,7 +20,7 @@ To run the scripts for the projects of this repository I recommend cloning this 
 ```
 $ git clone https://github.com/AstridSlet/visual_exam.git
 $ cd visual_exam
-$ bash ./create_venv.sh
+$ bash create_venv.sh
 $ source visual_venv/bin/activate
 ```
 
